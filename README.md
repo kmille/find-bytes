@@ -93,9 +93,8 @@ There is a PKGBUILD file for building a package on Arch Linux.
 
 ## KNOWN ISSUES
 
-- the code does not contain concurrency right now
-
-- files are read completely to memory before searching. This can lead to 
+- the code does not contain any concurrency right now
+- files are read completely into memory before searching. This can lead to out of memory
 
   ```bash
   kmille@linbox:grub-luks find-bytes -r -f mods-debian11/luks.mod .
