@@ -16,11 +16,11 @@ var (
 )
 
 func findOffsetInFile(filePath string) {
-	//fmt.Printf("DEBUG: looking in %q\n", filePath)
+	//fmt.Printf("DEBUG: looking at %q\n", filePath)
 	FileContent, err := os.ReadFile(filePath)
 	if err != nil {
 		fmt.Printf("Could not read file %q: %s\n", filePath, err)
-		os.Exit(1)
+		return
 	}
 	skipped := 0
 	for {
@@ -44,6 +44,7 @@ func findOffsetInFile(filePath string) {
 }
 
 func handleDirectory(path string) {
+	//fmt.Printf("DEBUG: looking in %q\n", path)
 	entries, err := ioutil.ReadDir(path)
 	if err != nil {
 		fmt.Printf("Could not read directory %q: %s\n", path, err)
